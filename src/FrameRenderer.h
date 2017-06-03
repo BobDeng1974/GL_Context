@@ -12,8 +12,7 @@
 #include <stdio.h>
 
 #include "GL.h"
-#include "GLM.h"
-#include "Path.h"
+#include "Math3d.h"
 #include "Quad.h"
 #include "Shader.h"
 

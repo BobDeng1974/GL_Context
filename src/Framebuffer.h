@@ -12,7 +12,7 @@
 #include <stdio.h>
 
 #include "GL.h"
-#include "GLM.h"
+#include "Math3d.h"
 #include "Attachment.h"
 
 class FBO // general purpose framebuffer

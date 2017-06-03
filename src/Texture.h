@@ -14,7 +14,7 @@
 #include <string.h>
 
 #include "GL.h"
-#include "GLM.h"
+#include "Math3d.h"
 #include "File.h"
 
 class TextureLoader
