@@ -13,15 +13,18 @@
 
 #include "GL.h"
 
-namespace Quad
+class Quad
 {
-    extern const float DATA[12];
-    extern GLuint _VAO;
-    extern GLuint _VBO;
+private:
+    static const float DATA[12];
+    static GLuint VAO;
+    static GLuint VBO;
     
-    void init();
-    void bind();
-    void destroy();
-}
+public:
+    static inline GLuint getVBO() { return Quad::VBO; }
+    static void initalize();
+    static void bind();
+    static void destroy();
+};
 
 #endif /* Quad_hpp */

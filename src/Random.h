@@ -14,7 +14,7 @@
 
 namespace Random
 {
-    inline void init() {
+    inline void initalize() {
         srand((unsigned int) time(NULL));
     }
     

@@ -20,16 +20,16 @@ const float Quad::DATA[12] =
     1.0f, -1.0f  // bottom right
 };
 
-GLuint Quad::_VAO = 0;
-GLuint Quad::_VBO = 0;
+GLuint Quad::VAO = 0;
+GLuint Quad::VBO = 0;
 
-void Quad::init()
+void Quad::initalize()
 {
-    glGenVertexArrays(1, &Quad::_VAO);
-    glGenBuffers(1, &Quad::_VBO);
+    glGenVertexArrays(1, &Quad::VAO);
+    glGenBuffers(1, &Quad::VBO);
     
-    glBindVertexArray(Quad::_VAO);
-    glBindBuffer(GL_ARRAY_BUFFER, Quad::_VBO);
+    glBindVertexArray(Quad::VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, Quad::VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(Quad::DATA), Quad::DATA, GL_STATIC_DRAW);
     
     glEnableVertexAttribArray(0);
@@ -41,11 +41,11 @@ void Quad::init()
 
 void Quad::bind()
 {
-    glBindVertexArray(Quad::_VAO);
+    glBindVertexArray(Quad::VAO);
 }
 
 void Quad::destroy()
 {
-    if(glIsBuffer(Quad::_VBO) == GL_TRUE) glDeleteBuffers(1, &Quad::_VBO);
-    if(glIsVertexArray(Quad::_VAO) == GL_TRUE) glDeleteVertexArrays(1, &Quad::_VAO);
+    if(glIsBuffer(Quad::VBO) == GL_TRUE) glDeleteBuffers(1, &Quad::VBO);
+    if(glIsVertexArray(Quad::VAO) == GL_TRUE) glDeleteVertexArrays(1, &Quad::VAO);
 }

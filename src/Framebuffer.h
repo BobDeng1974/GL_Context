@@ -49,7 +49,7 @@ private:
 
 public:
 	Framebuffer() {}
-	void init(unsigned int width, unsigned int height, Attachment::Type texture_type, Attachment::Type depth_type);
+	void initalize(unsigned int width, unsigned int height, Attachment::Type texture_type, Attachment::Type depth_type);
 	void destroy();
 };
 
@@ -72,8 +72,10 @@ private:
 	GLuint textures[LENGTH];
 
 public:
-	DSFramebuffer() {}
-	void init(unsigned int width, unsigned int height, GLenum filter = GL_NEAREST, Attachment::Type texture_type = Attachment::RGB_16F, Attachment::Type normal_type = Attachment::RGB_16F, Attachment::Type depth_type = Attachment::DEPTH_STENCIL);
+    DSFramebuffer(){}
+    DSFramebuffer(unsigned int width, unsigned int height, GLenum filter = GL_NEAREST, Attachment::Type texture_type = Attachment::RGB_16F, Attachment::Type normal_type = Attachment::RGB_16F, Attachment::Type depth_type = Attachment::DEPTH_STENCIL);
+    
+	void initalize(unsigned int width, unsigned int height, GLenum filter, Attachment::Type texture_type, Attachment::Type normal_type, Attachment::Type depth_type);
 	void destroy();
 
 	inline GLuint getDiffuseTexture() const { return this->textures[DIFFUSE_TEXTURE]; }

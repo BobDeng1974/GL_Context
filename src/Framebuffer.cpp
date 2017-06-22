@@ -75,7 +75,7 @@ void FBO::destroy()
 * Framebuffer: 
 */
 
-void Framebuffer::init(unsigned int width, unsigned int height, Attachment::Type texture_type, Attachment::Type depth_type)
+void Framebuffer::initalize(unsigned int width, unsigned int height, Attachment::Type texture_type, Attachment::Type depth_type)
 {
 	FBO::init(width, height);
 
@@ -110,7 +110,12 @@ void Framebuffer::destroy()
 * DSFramebuffer:
 */
 
-void DSFramebuffer::init(unsigned int width, unsigned int height, GLenum filter, Attachment::Type texture_type, Attachment::Type normal_type, Attachment::Type depth_type)
+DSFramebuffer::DSFramebuffer(unsigned int width, unsigned int height, GLenum filter, Attachment::Type texture_type, Attachment::Type normal_type, Attachment::Type depth_type)
+{
+    this->initalize(width, height, filter, texture_type, normal_type, depth_type);
+}
+
+void DSFramebuffer::initalize(unsigned int width, unsigned int height, GLenum filter, Attachment::Type texture_type, Attachment::Type normal_type, Attachment::Type depth_type)
 {
 	FBO::init(width, height);
 	this->textures[DIFFUSE_TEXTURE] = Attachment::get(texture_type, width, height, filter, filter);

@@ -16,15 +16,17 @@
 #include "Quad.h"
 #include "Shader.h"
 
-class FrameRenderer : public Shader
+class _FrameRenderer : public Shader
 {
 private:
     GLuint tex;
 public:
-    FrameRenderer(){}
-    void load();
+    _FrameRenderer(){}
+    void initalize();
     void render(GLuint texture_id);
     void destroy();
 };
+
+extern _FrameRenderer FrameRenderer;
 
 #endif /* FrameRenderer_hpp */

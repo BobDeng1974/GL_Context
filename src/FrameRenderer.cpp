@@ -8,7 +8,9 @@
 
 #include "FrameRenderer.h"
 
-void FrameRenderer::load()
+_FrameRenderer FrameRenderer;
+
+void _FrameRenderer::initalize()
 {
     ShaderSource source = ShaderSource("/Users/Jas/Documents/Libraries/GL_Context/src/Shaders/frame.vert", "/Users/Jas/Documents/Libraries/GL_Context/src/Shaders/frame.frag");
     this->source(source);
@@ -17,7 +19,7 @@ void FrameRenderer::load()
     this->tex = this->getUniform("tex");
 }
 
-void FrameRenderer::render(GLuint texture_id)
+void _FrameRenderer::render(GLuint texture_id)
 {
     this->bind();
     Quad::bind();
@@ -27,7 +29,7 @@ void FrameRenderer::render(GLuint texture_id)
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
-void FrameRenderer::destroy()
+void _FrameRenderer::destroy()
 {
     Shader::destroy();
 }

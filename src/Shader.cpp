@@ -26,6 +26,7 @@ bool shader_status(GLuint id, GLenum type, const std::string& filename) {
 
 ShaderSource::ShaderSource(const char* vpath, const char* fpath)
 {
+    printf("Loading shaders: [%s] and [%s]\n", vpath, fpath);
     std::string vertex_source = File::read(vpath);
     std::string fragment_source = File::read(fpath);
     

@@ -39,7 +39,7 @@ public:
     void load(const char* path);
     void destroy();
 
-    void bind(GLenum uniform, int target) const {
+    inline void bind(GLenum uniform, int target) const {
         glActiveTexture(GL_TEXTURE0 + target);
         glBindTexture(GL_TEXTURE_2D, this->id);
         glUniform1i(uniform, target);

@@ -11,10 +11,6 @@
 TextureLoader::TextureLoader(const char* path)
 {
     FILE* file = File::open(path, "rb");
-    if(!file) {
-        printf("Error: Could not open/find texture [%s].", path);
-        throw -1;
-    }
 
     GLubyte header[12];
     if(fread(&header, sizeof(header), 1, file) == 0) {
@@ -116,6 +112,9 @@ TextureLoader::~TextureLoader()
 {
     if(this->data != NULL) free(this->data);
 }
+
+/********************************************************************************/
+/********************************************************************************/
 
 void Texture::load(const char* path)
 {
