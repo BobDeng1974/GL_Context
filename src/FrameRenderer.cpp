@@ -27,6 +27,7 @@ void _FrameRenderer::render(GLuint texture_id)
     glBindTexture(GL_TEXTURE_2D, texture_id);
     glUniform1i(this->tex, 0);
     glDrawArrays(GL_TRIANGLES, 0, 6);
+    glBindVertexArray(0);
 }
 
 void _FrameRenderer::destroy()
