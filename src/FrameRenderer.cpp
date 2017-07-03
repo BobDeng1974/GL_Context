@@ -12,7 +12,7 @@ _FrameRenderer FrameRenderer;
 
 void _FrameRenderer::initalize()
 {
-    ShaderSource source = ShaderSource("/Users/Jas/Documents/Libraries/GL_Context/src/Shaders/frame.vert", "/Users/Jas/Documents/Libraries/GL_Context/src/Shaders/frame.frag");
+    ShaderSource source = ShaderSource("/Users/jass/Documents/Libraries/GL_Context/src/Shaders/frame.vert", "/Users/jass/Documents/Libraries/GL_Context/src/Shaders/frame.frag");
     this->source(source);
     this->bindAttributeLocation(0, "vertex");
     this->link(source);
