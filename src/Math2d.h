@@ -9,8 +9,13 @@
 #ifndef GLM_h
 #define GLM_h
 
+#ifdef _WIN32
+	#define _USE_MATH_DEFINES // for C++  
+	#include <cmath>  
+#endif
+
 #define GLM_ENABLE_EXPERIMENTAL
-#include "../../libs/glm/glm/glm.hpp"
-#include "../../libs/glm/glm/gtx/matrix_transform_2d.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtx/matrix_transform_2d.hpp>
 
 #endif /* GLM_h */

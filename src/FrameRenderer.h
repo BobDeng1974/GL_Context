@@ -12,8 +12,8 @@
 #include <stdio.h>
 
 #include "GL.h"
-#include "Math3d.h"
 #include "Quad.h"
+#include "Math3d.h"
 #include "Shader.h"
 
 class _FrameRenderer : public Shader

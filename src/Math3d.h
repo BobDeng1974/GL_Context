@@ -9,9 +9,14 @@
 #ifndef GLM_h
 #define GLM_h
 
+#ifdef _WIN32
+	#define _USE_MATH_DEFINES // for C++  
+	#include <cmath>  
+#endif
+
 #define GLM_ENABLE_EXPERIMENTAL
-#include "../../libs/glm/glm/glm.hpp"
-#include "../../libs/glm/glm/gtx/transform.hpp"
-#include "../../libs/glm/glm/gtx/quaternion.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtx/transform.hpp>
+#include <glm/gtx/quaternion.hpp>
 
 #endif /* GLM_h */

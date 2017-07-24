@@ -7,6 +7,7 @@
 
 #ifdef _WIN32
 	#include <GL/glew.h>
+	#undef main
 #endif
 
 #include "Keyboard.h"
