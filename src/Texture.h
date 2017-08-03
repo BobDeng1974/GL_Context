@@ -37,6 +37,7 @@ class Texture
 public:
     Texture() {}
     Texture(const char* path) { this->load(path); }
+    Texture(const std::string& str) { this->load(str.c_str()); }
     void load(const char* path);
     void destroy();
 

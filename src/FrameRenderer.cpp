@@ -13,7 +13,7 @@ _FrameRenderer FrameRenderer;
 #ifdef _WIN32
 	#define INTERNAL_PATH(x) "C:\\Users\\Jas\\Documents\\Projects\\GL_Context\\src\\Shaders\\" x
 #else
-	#define INTERNAL_PATH(x) "/Users/jass/Documents/Libraries/GL_3D_Engine/src/Shaders/" x
+	#define INTERNAL_PATH(x) "/Users/jass/Documents/Libraries/GL_Context/src/Shaders/" x
 #endif
 
 void _FrameRenderer::initalize()

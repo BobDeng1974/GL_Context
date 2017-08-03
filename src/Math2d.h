@@ -14,7 +14,7 @@
 	#include <cmath>  
 #endif
 
-#define GLM_ENABLE_EXPERIMENTAL
+//#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
 #include <glm/gtx/matrix_transform_2d.hpp>
 
