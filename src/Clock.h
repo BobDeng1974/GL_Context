@@ -35,7 +35,7 @@ public:
     }
     
     inline float getDelta() const {
-        return (this->current - this->last) / (double) this->ms;
+        return (this->current - this->last) / (float) this->ms;
     }
 };
 

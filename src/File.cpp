@@ -18,9 +18,9 @@ std::string File::read(const char* path)
 
     char* data = new char[length + 1];
     fread(data, 1, length, file);
-    fclose(file);
+	fclose(file);
 
-    data[length] = '\0';
+	data[length] = '\0';
     std::string str = std::string(data);
 
     delete[] data;
