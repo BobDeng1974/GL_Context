@@ -13,42 +13,32 @@
 #include <time.h>
 #include <SDL2/SDL.h>
 
-namespace Clock
+class Clock
 {
-    extern Uint32 current;
-    extern Uint32 last;
-    extern float delta;
+private:
+    Uint32 current;
+    Uint32 last;
+    Uint32 ms;
+public:
+    Clock(){}
+    Clock(Uint32 milliseconds);
     
-    inline void init() {
-        last = SDL_GetTicks();
+    inline bool tick()
+    {
         current = SDL_GetTicks();
-        delta = 0;
-    }
-    
-    inline bool tick() {
-        current = SDL_GetTicks();
-        delta = (current - last) / 1000.0f; // milliseconds
-        if(delta >= 1.0f) {
-            last = current;
+        if(this->current - this->last >= this->ms)
+        {
+            this->last = this->current;
             return true;
         }
         return false;
     }
     
-    inline float getDelta() {
-        return delta;
+    inline float getDelta() const {
+        return (this->current - this->last) / (double) this->ms;
     }
-}
-
-class CClock
-{
-private:
-    float delta;
-    float ms; // ticks every ms seconds
-public:
-    CClock();
-    CClock(Uint32 milliseconds);
-    bool tick();
 };
+
+extern Clock GlobalClock;
 
 #endif /* Clock_hpp */

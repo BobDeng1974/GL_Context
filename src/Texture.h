@@ -40,6 +40,11 @@ public:
     Texture(const std::string& str) { this->load(str.c_str()); }
     void load(const char* path);
     void destroy();
+    
+    Texture(const Texture& other) {
+        this->id = other.id;
+        this->dimensions = other.dimensions;
+    }
 
     inline void bind(GLenum uniform, int target) const {
         glActiveTexture(GL_TEXTURE0 + target);
