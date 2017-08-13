@@ -8,6 +8,7 @@ namespace Attachment
 	typedef enum
 	{
 		NONE,
+		R_8F,
 		RGB_8UI,
 		RGB_16F,
 		RGB_32F,
